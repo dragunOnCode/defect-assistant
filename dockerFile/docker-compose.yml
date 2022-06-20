@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  hhhw:
+    build: .
+    image: hhhw-defect-assistant
+    ports:
+    - "10086:10086"
