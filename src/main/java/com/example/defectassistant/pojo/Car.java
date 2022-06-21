@@ -1,12 +1,16 @@
 package com.example.defectassistant.pojo;
 
+
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@NonNull
 public class Car {
 
     private int id;
@@ -23,6 +27,6 @@ public class Car {
 
     private float wheelRev;
 
-    private Boolean tensorReponse;
+    private Boolean tensorReponse = true;
 
 }
