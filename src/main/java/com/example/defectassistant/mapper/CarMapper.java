@@ -20,6 +20,6 @@ public interface CarMapper {
     @Update("update car set " +
             "userId = #{userId}, wheelPressure = #{wheelPressure}, engineTemperature = #{engineTemperature}, " +
             "refrigerantTTemperature = #{refrigerantTTemperature}, airBagPressure = #{airBagPressure}, " +
-            "wheelRev = #{wheelRev}, tensorReponse = #{tensorReponse} where carId = #{carId}")
+            "wheelRev = #{wheelRev}, tensorReponse = #{tensorReponse} where id = #{id}")
     int update(Car car);
 }

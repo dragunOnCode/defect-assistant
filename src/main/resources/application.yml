@@ -52,4 +52,4 @@ secure:
       - "/actuator/**"
       - "/auth/login"
       - "/auth/register"
-      - "/defect/notoken"
+      - "/Defect/notoken"

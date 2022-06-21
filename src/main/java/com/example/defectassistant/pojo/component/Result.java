@@ -27,6 +27,15 @@ public class Result {
         return data;
     }
 
+    @Override
+    public String toString() {
+        return "Result{" +
+                "status=" + status +
+                ", msg='" + msg + '\'' +
+                ", data=" + data +
+                '}';
+    }
+
     /**
      * 建议用ResultBuilder的build方法来生成Result
      * 这样Result的状态能够维持一致性：

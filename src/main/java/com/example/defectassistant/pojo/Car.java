@@ -23,6 +23,6 @@ public class Car {
 
     private float wheelRev;
 
-    private boolean tensorReponse;
+    private Boolean tensorReponse;
 
 }

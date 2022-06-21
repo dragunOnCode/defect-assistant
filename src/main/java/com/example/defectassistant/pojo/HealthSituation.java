@@ -4,15 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+import java.util.Set;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class defect {
+@NoArgsConstructor
+public class HealthSituation {
 
-    private int id;
+    private int code;
 
-    private int carId;
-
-    private int exceptionId;
-
+    private Set<Exception> exceptions;
 }
