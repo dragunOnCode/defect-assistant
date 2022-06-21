@@ -10,4 +10,8 @@ public interface DefectService {
 
     List<Integer> findbyCarId(int carId);
 
+    int deleteByCarId(int carId);
+
+    int countByCarId(int carId);
+
 }

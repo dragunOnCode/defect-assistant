@@ -23,4 +23,14 @@ public class DefectServiceImpl implements DefectService {
     public List<Integer> findbyCarId(int carId) {
         return defectMapper.selectByCarId(carId);
     }
+
+    @Override
+    public int deleteByCarId(int carId) {
+        return defectMapper.deleteByCarId(carId);
+    }
+
+    @Override
+    public int countByCarId(int carId) {
+        return defectMapper.countByCarId(carId);
+    }
 }

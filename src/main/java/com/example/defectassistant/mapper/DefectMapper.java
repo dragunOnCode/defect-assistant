@@ -19,4 +19,10 @@ public interface DefectMapper {
     @Select("select exceptionId from defect where carId = #{carId}")
     List<Integer> selectByCarId(int carId);
 
+    @Delete("delete from defect where carId = #{carId} limit 300")
+    int deleteByCarId(int carId);
+
+    @Select("select count(*) from defect where carId = #{carId}")
+    int countByCarId(int carId);
+
 }

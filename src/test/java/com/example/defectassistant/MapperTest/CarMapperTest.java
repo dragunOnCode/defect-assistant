@@ -35,8 +35,8 @@ public class CarMapperTest {
     @Test
     public void testUpdate(){
         Car car = new Car();
-        car.setId(2);
-        car.setUserId(2);
+        car.setId(1);
+        car.setUserId(1);
         car.setWheelPressure(2.5f);
         car.setEngineTemperature(80);
         car.setRefrigerantTTemperature(85);

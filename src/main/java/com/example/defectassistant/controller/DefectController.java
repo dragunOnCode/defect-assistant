@@ -99,6 +99,9 @@ public class DefectController {
 
     @PostMapping("/upload")
     public Result upload(@RequestBody Car car){
+        if(defectService.countByCarId(car.getId()) > 300){
+            defectService.deleteByCarId(car.getId());
+        }
         HealthSituation healthSituation = carService.checkHealthSituation(car);
         return Result.OK().msg("故障情况如下").data(healthSituation).build();
     }
