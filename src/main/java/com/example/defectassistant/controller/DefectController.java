@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/defect")
@@ -85,7 +87,7 @@ public class DefectController {
                     if(exceptionIds == null){
                         return Result.OK().msg("No exception no solution").build();
                     }else{
-                        List<Solution> solutions = new ArrayList<>();
+                        Set<Solution> solutions = new HashSet<>();
                         for(Integer id : exceptionIds){
                             Solution solution = solutionService.findByExceptionId(id);
                             solutions.add(solution);
