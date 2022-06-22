@@ -70,7 +70,7 @@ public class DefectController {
                 return Result.OK().data("前往维修厂").build();
             //预约上门
             case 4:
-                break;
+                return Result.OK().data("预约上门").build();
             //自行解决
             default:
                 //获取具体某一故障的解决方法
@@ -94,7 +94,6 @@ public class DefectController {
                     }
                 }
         }
-        return null;
     }
 
     @PostMapping("/upload")
