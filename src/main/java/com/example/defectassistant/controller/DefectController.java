@@ -49,10 +49,10 @@ public class DefectController {
         if(exceptionIds == null){
             return Result.OK().msg("No exceptions").build();
         }else{
-            List<Exception> exceptions = new ArrayList<>();
+            Set<Exception> exceptions = new HashSet<Exception>();
             for(Integer id : exceptionIds){
-                Exception exception = exceptionService.findById(id);
-                exceptions.add(exception);
+                //Exception exception = exceptionService.findById(id);
+                exceptions.add(exceptionService.findById(id));
             }
             return Result.OK().msg("Here are exceptions").data(exceptions).build();
         }
@@ -87,10 +87,11 @@ public class DefectController {
                     if(exceptionIds == null){
                         return Result.OK().msg("No exception no solution").build();
                     }else{
-                        Set<Solution> solutions = new HashSet<>();
+                        Set<Solution> solutions = new HashSet<Solution>();
                         for(Integer id : exceptionIds){
-                            Solution solution = solutionService.findByExceptionId(id);
-                            solutions.add(solution);
+//                            Solution solution = solutionService.findByExceptionId(id);
+//                            solutions.add(solution);
+                            solutions.add(solutionService.findByExceptionId(id));
                         }
                         return Result.OK().msg("Here are Solutions").data(solutions).build();
                     }
