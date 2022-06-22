@@ -1,14 +1,9 @@
 package com.example.defectassistant.controller;
 
-import com.example.defectassistant.pojo.Car;
+import com.example.defectassistant.pojo.*;
 import com.example.defectassistant.pojo.Exception;
-import com.example.defectassistant.pojo.HealthSituation;
-import com.example.defectassistant.pojo.Solution;
 import com.example.defectassistant.pojo.component.Result;
-import com.example.defectassistant.service.CarService;
-import com.example.defectassistant.service.DefectService;
-import com.example.defectassistant.service.ExceptionService;
-import com.example.defectassistant.service.SolutionService;
+import com.example.defectassistant.service.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -32,6 +27,12 @@ public class DefectController {
 
     @Resource
     CarService carService;
+
+    @Resource
+    MapService mapService;
+
+    @Resource
+    MaintenanceService maintenanceService;
 
     @GetMapping("/notoken")
     public Result hello1(){
@@ -69,10 +70,12 @@ public class DefectController {
                 return Result.OK().data("保险流程").build();
             //前往维修厂
             case 3:
-                return Result.OK().data("前往维修厂").build();
+                List<Map> maps = mapService.findAllStore();
+                return Result.OK().data("前往维修厂").data(maps).build();
             //预约上门
             case 4:
-                return Result.OK().data("预约上门").build();
+                List<Maintenance> maintenances = maintenanceService.findAllMaintenancer();
+                return Result.OK().data("预约上门").data(maintenances).build();
             //自行解决
             default:
                 //获取具体某一故障的解决方法
